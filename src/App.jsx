@@ -2,9 +2,9 @@ import { useMemo, useState } from "react";
 import { menuData } from "./data/menu";
 
 export default function App() {
-  const room = useMemo(() => {
+  const table = useMemo(() => {
     const params = new URLSearchParams(window.location.search);
-    return params.get("room") || "—";
+    return params.get("table") || "—";
   }, []);
 
   const [cart, setCart] = useState({});
@@ -39,7 +39,7 @@ export default function App() {
   const WHATSAPP_NUMBER = "923000204168";
 
   const message = `
-Room ${room}
+Table ${table}
 Order:
 ${items.map((i) => `${i.qty}x ${i.name}`).join("\n")}
 `.trim();
@@ -52,8 +52,8 @@ ${items.map((i) => `${i.qty}x ${i.name}`).join("\n")}
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
       <header className="bg-hotel text-white px-6 py-5 rounded-b-3xl shadow">
-        <h1 className="text-xl font-semibold tracking-wide">Hotel Hillview</h1>
-        <p className="text-sm opacity-80">In-Room Dining · Room {room}</p>
+        <h1 className="text-xl font-semibold tracking-wide">Restaurant</h1>
+        <p className="text-sm opacity-80">Table Ordering · Table {table}</p>
       </header>
 
       {/* Category Tabs */}
@@ -130,7 +130,7 @@ ${items.map((i) => `${i.qty}x ${i.name}`).join("\n")}
             <div className="flex justify-between items-center mb-4">
               <div>
                 <h3 className="text-lg font-semibold">Your Order</h3>
-                <p className="text-xs text-gray-500">Room {room}</p>
+                <p className="text-xs text-gray-500">Table {table}</p>
               </div>
               <button
                 onClick={() => setCartOpen(false)}
@@ -184,7 +184,7 @@ ${items.map((i) => `${i.qty}x ${i.name}`).join("\n")}
             </a>
 
             <p className="text-xs text-gray-400 text-center mt-2">
-              Bill will be settled at checkout
+              Bill will be provided at your table
             </p>
           </div>
         </div>
