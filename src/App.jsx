@@ -36,7 +36,7 @@ export default function App() {
 
   const items = Object.values(cart);
 
-  const WHATSAPP_NUMBER = "923000204168";
+  const WHATSAPP_NUMBER = "923289368269";
 
   const message = `
 Table ${table}
